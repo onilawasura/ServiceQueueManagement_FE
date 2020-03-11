@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="container">
+        <div class="col-md-12">
+            <h1>Ongoing Appoinments</h1>
+
+            <br />
+
+            <input type="radio" value="customer" name="radioAppoinments" (change)="SelectAppoinmentType(1)" > Service Slot
+            <input type="radio" value="serviceSlt" name="radioAppoinments" (change)="SelectAppoinmentType(2)"> Customer
+            <input type="radio" value="All" name="radioAppoinments" (change)="SelectAppoinmentType(3)"> All Appoinments
+
+<br />
+            <select *ngIf="showServiceSlotComponent"  id="mySelect" class="form-control browser-default custom-select"  [(ngModel)]="serviceSlotId"
+            (ngModelChange)="GetAllServicesByServiceSlot(serviceSlotId)">
+              <option value="" selected="selected">Please Select a Service Slot</option>
+              <option [selected]="serviceSlotId == serviceSlot.id"
+                *ngFor="let serviceSlot of serviceSlots" value={{serviceSlot.id}}>{{serviceSlot.name}}</option>
+            </select>
+
+            <br />
+
+            <select  *ngIf="showCustomerComponent" class="form-control browser-default custom-select"  [(ngModel)]="customerId"
+            (ngModelChange)="GetAllServicesByCustomer(customerId)">
+              <option value="" selected="selected">Please Select a Customer</option>
+              <option [selected]="customerId == customer.id"
+                *ngFor="let customer of customers" value={{customer.id}}>{{customer.name}}</option>
+            </select>
+
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Service Desk ID</th>
+                        <th>Customer Name</th>
+                        <th>Employee Name</th>
+                        <th>Required Service</th>
+                        <th>Time Slot</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let appoinment of appoinments">
+                        <td>{{appoinment.serviceDesk}}</td>
+                        <td>{{appoinment.customerName}}</td>
+                        <td>{{appoinment.employeeName}}</td>
+                        <td>{{appoinment.requiredService}}</td>
+                        <td>{{appoinment.timeSlot}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
