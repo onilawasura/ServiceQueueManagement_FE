@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ServiceQueueManagement
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+=======
+# ServiceQueueManagement_FE
+Sample project to demonstrate asp.net multi layering structure given by the zone (Front End)
+>>>>>>> 8b10f632513224500bcf211abdd286e65cd9d262
